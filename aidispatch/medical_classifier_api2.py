@@ -145,9 +145,21 @@ def classify_image_bytes(file_bytes: bytes, filename: str, model_path: str) -> D
         arr = (arr - arr.min()) / (arr.max() - arr.min() + 1e-8)
         arr = (arr * 255).astype(np.uint8)
         img = Image.fromarray(arr).convert("RGB")
+    
+    elif ext == ".zip":
+        import zipfile
+        SUPPORTED = {".png", ".jpg", ".jpeg", ".bmp", ".dcm", ".tif", ".tiff", ".nii", ".gz"}
+        with zipfile.ZipFile(io.BytesIO(file_bytes)) as zf:
+            candidates = [f for f in zf.namelist() if Path(f).suffix.lower() in SUPPORTED]
+            if not candidates:
+                raise ValueError("ZIP contains no supported medical image files")
+            # classify the first valid image found inside
+            img_bytes = zf.read(candidates[0])
+            return classify_image_bytes(img_bytes, candidates[0], model_path)
 
     else:
         raise ValueError(f"Unsupported file type: {ext}")
+
 
     tensor = TRANSFORM(img).unsqueeze(0).to(DEVICE)
     logits = model(tensor)
