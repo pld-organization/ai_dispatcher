@@ -10,16 +10,16 @@ python-multipart==0.0.9
 motor==3.5.1
 pymongo==4.8.0
 
-# --- Redis (async support included) ---
+# --- Redis ---
 redis==5.0.7
 
 # --- Machine Learning / Image processing ---
-torch==2.4.0
-torchvision==0.19.0
+torch==2.11.0
+torchvision==0.26.0
 numpy==1.26.4
 pillow==10.4.0
 
-# --- Optional (performance & env) ---
+# --- Optional utilities ---
 orjson==3.10.7
 python-dotenv==1.0.1
 uvloop==0.19.0
