@@ -17,19 +17,19 @@ from db.redis_client import enqueue_job, queue_length
 router = APIRouter()
 
 MODEL_PATH          = "./model/medical_router_v1.pth"
-STORAGE_SERVICE_URL = os.getenv("STORAGE_URL", "http://127.0.0.1:3001/upload/single")
-STORAGE_SERVICE_URL_MULTIPLE = os.getenv("STORAGE_URL", "http://127.0.0.1:3001/upload/multiple")
+STORAGE_SERVICE_URL = os.getenv("STORAGE_URL", "https://storage-service-yxqy.onrender.com/upload/single")
+STORAGE_SERVICE_URL_MULTIPLE = os.getenv("STORAGE_URL", "https://storage-service-yxqy.onrender.com/upload/multiple")
 
 
 SERVICE_DISPATCH_MAP = {
     "breast":        "http://127.0.0.1:8000/api/v1/breastpredict",
     "lung":          "http://127.0.0.1:8000/api/v1/lungpredict",
-    "skin":          "http://127.0.0.1:8000/api/v1/skinclass",
+    "skin":          "https://repoai-0nq6.onrender.com/api/v1/predict",
     "blood":         "http://127.0.0.1:8000/api/v1/bloodclass",
-    "bone_cancer":   "http://127.0.0.1:8000/api/v1/boneclass",
+    "bone_cancer":   "https://bone-cancer-api-qg7x.onrender.com/predict",
     "bone_fracture": "http://127.0.0.1:8000/api/v1/boneclass",
     "liver":         "http://127.0.0.1:8000/api/v1/liverpredict",
-    "colon_cell":    "http://127.0.0.1:8000/api/v1/colonclass",
+    "colon_cell":    "http://127.0.0.1:8000/api/v1/colon/predict",
     "lung_cell":     "http://127.0.0.1:8000/api/v1/lungcellpredict",
     "brain":         "http://127.0.0.1:8000/api/v1/brainpredict",
 }
