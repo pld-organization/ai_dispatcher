@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cancer-dispatcher-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cancer-dispatcher-api
+  template:
+    metadata:
+      labels:
+        app: cancer-dispatcher-api
+    spec:
+      containers:
+      - name: cancer-dispatcher-api
+        image: cancer-dispatcher-api:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8100
+        env:
+        - name: MODEL_PATH
+          value: /models/medical_router_v1.pth
