@@ -28,7 +28,7 @@ SERVICE_DISPATCH_MAP = {
     "blood":         "http://127.0.0.1:8000/api/v1/bloodclass",
     "bone_cancer":   "https://bone-cancer-api-qg7x.onrender.com/predict",
     "bone_fracture": "http://127.0.0.1:8000/api/v1/boneclass",
-    "liver":         "http://127.0.0.1:8000/api/v1/liverpredict",
+    "liver":         "https://pillowlike-lobeliaceous-briana.ngrok-free.dev/api/v1/predict",
     "colon_cell":    "http://127.0.0.1:8000/api/v1/colon/predict",
     "lung_cell":     "http://127.0.0.1:8000/api/v1/lungcellpredict",
     "brain":         "http://127.0.0.1:8000/api/v1/brainpredict",
