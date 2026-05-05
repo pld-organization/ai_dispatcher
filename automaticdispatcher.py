@@ -23,7 +23,7 @@ STORAGE_SERVICE_URL_MULTIPLE = os.getenv("STORAGE_URL", "https://storage-service
 
 SERVICE_DISPATCH_MAP = {
     "breast":        "http://127.0.0.1:8000/api/v1/breastpredict",
-    "lung":          "http://127.0.0.1:8000/api/v1/lungpredict",
+    "lung":          "https://viable-trimmer-crazed.ngrok-free.dev/api/v1/lungpredict",
     "skin":          "https://repoai-0nq6.onrender.com/api/v1/predict",
     "blood":         "http://127.0.0.1:8000/api/v1/bloodclass",
     "bone_cancer":   "https://bone-cancer-api-qg7x.onrender.com/predict",
