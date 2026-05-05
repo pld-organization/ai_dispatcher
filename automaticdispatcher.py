@@ -22,7 +22,7 @@ STORAGE_SERVICE_URL_MULTIPLE = os.getenv("STORAGE_URL", "https://storage-service
 
 
 SERVICE_DISPATCH_MAP = {
-    "breast":        "http://127.0.0.1:8000/api/v1/breastpredict",
+    "breast":        "https://viable-trimmer-crazed.ngrok-free.dev/api/v1/breastpredict",
     "lung":          "https://viable-trimmer-crazed.ngrok-free.dev/api/v1/lungpredict",
     "skin":          "https://repoai-0nq6.onrender.com/api/v1/predict",
     "blood":         "http://127.0.0.1:8000/api/v1/bloodclass",
@@ -30,7 +30,7 @@ SERVICE_DISPATCH_MAP = {
     "bone_fracture": "http://127.0.0.1:8000/api/v1/boneclass",
     "liver":         "https://pillowlike-lobeliaceous-briana.ngrok-free.dev/api/v1/predict",
     "colon_cell":    "http://127.0.0.1:8000/api/v1/colon/predict",
-    "lung_cell":     "http://127.0.0.1:8000/api/v1/lungcellpredict",
+    "lung_cell":     "https://viable-trimmer-crazed.ngrok-free.dev/api/v1/lungcellpredict",
     "brain":         "http://127.0.0.1:8000/api/v1/brainpredict",
 }
 
