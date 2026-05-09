@@ -17,8 +17,8 @@ from db.redis_client import enqueue_job, queue_length
 router = APIRouter()
 
 MODEL_PATH          = "./model/medical_router_v1.pth"
-STORAGE_SERVICE_URL = os.getenv("STORAGE_URL", "https://storage-service-yxqy.onrender.com/upload/single")
-STORAGE_SERVICE_URL_MULTIPLE = os.getenv("STORAGE_URL", "https://storage-service-yxqy.onrender.com/upload/multiple")
+STORAGE_SERVICE_URL = os.getenv("STORAGE_URL", "https://storage-service-slgl.onrender.com/upload/single")
+STORAGE_SERVICE_URL_MULTIPLE = os.getenv("STORAGE_URL", "https://storage-service-slgl.onrender.com/upload/multiple")
 
 
 SERVICE_DISPATCH_MAP = {
